@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card_container {
+        width: auto;
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+
+        .card {
+            width: 14rem;
+            height: 15rem;
+            border-radius: 0rem 1.5rem;
+            background-color: #F4FAFE;
+            overflow: hidden;
+
+            .details {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0.5rem;
+
+                .card_number {
+                    background-color: #FFFFFF;
+                    // background-color: blue;
+                    height: 4rem;
+                    width: 4rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1rem;
+                }
+
+                .card_description {
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    text-align: center;
+                }
+            }
+
+            .image_container {
+                position: absolute;
+                top: 15.1rem;
+            }
+        }
+    }
+}
