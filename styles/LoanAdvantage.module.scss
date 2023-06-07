@@ -10,8 +10,7 @@
         top: 40%;
 
         .required_documents {
-            background: rgba(202, 189, 189, 0.82);
-            // background-color: gray;
+            background: #ebe6e6d1;
             border-radius: 2.5rem 0;
             width: 80%;
             padding: 2rem;
@@ -21,18 +20,23 @@
             // background-color: rgba(255, 255, 255, 0.82);
             // height: 10rem;
 
+            @media only screen and (max-width : 800px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .magnifying_glass_image_container {
                 width: 15.5rem;
                 height: 15.5rem;
-                // background-color: aqua;
                 border-radius: 50%;
                 background: linear-gradient(172.57deg, #F2B63E -16.32%, rgba(242, 182, 62, 0.87) -8.36%, rgba(242, 182, 62, 0.67) 3.58%, rgba(242, 182, 62, 0.49) 16.85%, rgba(242, 182, 62, 0.34) 30.13%, rgba(242, 182, 62, 0.22) 44.72%, rgba(242, 182, 62, 0.12) 59.32%, rgba(242, 182, 62, 0.05) 75.25%, rgba(242, 182, 62, 0.01) 92.5%, rgba(242, 182, 62, 0) 116.39%);
 
                 .magnifying_glass_image {
                     width: 12rem;
-                    position: absolute;
-                    top: 33rem;
-                    left: 16rem;
+                    // width: 80%;
+                    position: relative;
+                    top: 0%;
+                    left: 17%;
                 }
             }
 
@@ -50,10 +54,20 @@
                     display: flex;
                     gap: 4rem;
 
+                    @media only screen and (max-width : 800px) {
+                        align-items: center;
+                        justify-content: center;
+                        gap: 2rem;
+                    }
+
                     .checkIcon_documentName {
                         display: flex;
                         align-items: center;
                         gap: 2rem;
+
+                        @media only screen and (max-width: 800px) {
+                            gap: 0.5rem;
+                        }
 
                         .document_name {
                             font-family: 'Open Sans';
@@ -61,7 +75,6 @@
                             font-weight: 600;
                             font-size: 1rem;
                             color: #545454;
-                            line-height: 3rem;
                         }
                     }
 
@@ -74,5 +87,12 @@
         position: relative;
         top: -94%;
         left: 0%;
+    }
+
+    .powered_by {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
     }
 }

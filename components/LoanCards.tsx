@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/LoanCards.module.scss";
 import loanCardImage1 from "../public/Images/loanCardImage1.png";
+import ellipseImage from "../public/Images/EllipseImage.svg";
 
 type Props = {};
 
