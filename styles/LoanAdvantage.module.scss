@@ -1,74 +1,78 @@
-.component_heading {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.5rem;
-    // line-height: 4rem;
-    margin-left: 10%;
-}
+.loan_advantages {
+    height: 30rem;
 
-.required_documents_main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .required_documents {
-        background: rgba(202, 189, 189, 0.82);
-        // background-color: gray;
-        border-radius: 2.5rem 0;
-        width: 80%;
-        padding: 2rem;
+    .required_documents_main {
         display: flex;
-        padding-top: 10rem;
-        gap: 3rem;
-        // background-color: rgba(255, 255, 255, 0.82);
-        // height: 10rem;
+        justify-content: center;
+        align-items: center;
+        // margin-top: 17%;
+        position: relative;
+        top: 40%;
 
-        .magnifying_glass_image_container {
-            width: 15.5rem;
-            height: 15.5rem;
-            // background-color: aqua;
-            border-radius: 50%;
-            background: linear-gradient(172.57deg, #F2B63E -16.32%, rgba(242, 182, 62, 0.87) -8.36%, rgba(242, 182, 62, 0.67) 3.58%, rgba(242, 182, 62, 0.49) 16.85%, rgba(242, 182, 62, 0.34) 30.13%, rgba(242, 182, 62, 0.22) 44.72%, rgba(242, 182, 62, 0.12) 59.32%, rgba(242, 182, 62, 0.05) 75.25%, rgba(242, 182, 62, 0.01) 92.5%, rgba(242, 182, 62, 0) 116.39%);
+        .required_documents {
+            background: rgba(202, 189, 189, 0.82);
+            // background-color: gray;
+            border-radius: 2.5rem 0;
+            width: 80%;
+            padding: 2rem;
+            display: flex;
+            padding-top: 10rem;
+            gap: 3rem;
+            // background-color: rgba(255, 255, 255, 0.82);
+            // height: 10rem;
 
-            .magnifying_glass_image {
-                width: 12rem;
-                position: absolute;
-                top: 33rem;
-                left: 16rem;
+            .magnifying_glass_image_container {
+                width: 15.5rem;
+                height: 15.5rem;
+                // background-color: aqua;
+                border-radius: 50%;
+                background: linear-gradient(172.57deg, #F2B63E -16.32%, rgba(242, 182, 62, 0.87) -8.36%, rgba(242, 182, 62, 0.67) 3.58%, rgba(242, 182, 62, 0.49) 16.85%, rgba(242, 182, 62, 0.34) 30.13%, rgba(242, 182, 62, 0.22) 44.72%, rgba(242, 182, 62, 0.12) 59.32%, rgba(242, 182, 62, 0.05) 75.25%, rgba(242, 182, 62, 0.01) 92.5%, rgba(242, 182, 62, 0) 116.39%);
+
+                .magnifying_glass_image {
+                    width: 12rem;
+                    position: absolute;
+                    top: 33rem;
+                    left: 16rem;
+                }
             }
-        }
 
-        .document_main_container {
-            margin-left: 2rem;
+            .document_main_container {
+                margin-left: 2rem;
 
-            .title {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 1rem;
-            }
-
-            .document_list {
-                display: flex;
-                gap: 4rem;
-
-                .checkIcon_documentName {
-                    display: flex;
-                    align-items: center;
-                    gap: 2rem;
-
-                    .document_name {
-                        font-family: 'Open Sans';
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 1rem;
-                        color: #545454;
-                        line-height: 3rem;
-                    }
+                .title {
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 1rem;
                 }
 
+                .document_list {
+                    display: flex;
+                    gap: 4rem;
+
+                    .checkIcon_documentName {
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+
+                        .document_name {
+                            font-family: 'Open Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 1rem;
+                            color: #545454;
+                            line-height: 3rem;
+                        }
+                    }
+
+                }
             }
         }
+    }
+
+    .loan_advantage_card {
+        position: relative;
+        top: -94%;
+        left: 0%;
     }
 }

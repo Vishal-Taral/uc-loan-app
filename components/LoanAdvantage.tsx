@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/LoanAdvantage.module.scss";
+import LoanCards from "./LoanCards";
 // import { ReactComponent as MagninfyingIcon } from "../public/Images/magninfyingIcon.svg";
 // import { ReactComponent as CheckIcon } from '../public/CheckIcon.svg';
 
@@ -69,6 +70,10 @@ const LoanAdvantage = (props: Props) => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.loan_advantage_card}>
+        <LoanCards />
       </div>
     </div>
   );
