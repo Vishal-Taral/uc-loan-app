@@ -4,10 +4,15 @@
     align-items: center;
 
     .card_container {
-        width: auto;
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 2rem;
+        // width: auto;
+        // display: flex;
+        // gap: 1.5rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 14rem));
+        grid-gap: 1rem;
+        margin-top: 0;
+        justify-content: center;
 
         .card {
             width: 14rem;
@@ -25,6 +30,7 @@
                 .card_number {
                     background-color: #FFFFFF;
                     // background-color: blue;
+                    color: #174E7F;
                     height: 4rem;
                     width: 4rem;
                     border-radius: 50%;
@@ -35,12 +41,14 @@
                 }
 
                 .card_description {
-                    font-family: 'Open Sans';
+                    font-family: sans-serif;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 1rem;
+                    line-height: 26px;
                     text-align: center;
                 }
+
             }
 
             .image_container {
