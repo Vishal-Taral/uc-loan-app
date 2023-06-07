@@ -1,0 +1,23 @@
+.route_navigation {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10vmax;
+  padding-top: 0.5vmax;
+  padding-bottom: 0.5vmax;
+  background-color: #ebf6fd;
+  font-size: 1vmax;
+
+  .navigation_link {
+    color: #3398d5;
+    cursor: pointer;
+  }
+  .navigation_arrow {
+    color: #858585;
+  }
+}
+.route_navigation > div {
+  padding-right: 2vmax;
+}
+.route_navigation > div:last-child {
+  color: #858585;
+}

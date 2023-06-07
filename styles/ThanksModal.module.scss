@@ -1,0 +1,97 @@
+.modal_container {
+  //   display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  .modal_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 24;
+    left: 30.9%;
+    right: 30.9%;
+    top: 24.57%;
+    bottom: 31.04%;
+    padding-top: 1rem;
+    border-radius: 1.75rem;
+    .close_btn {
+      cursor: pointer;
+      position: absolute;
+      top: -16%;
+      left: 92%;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 50px;
+    }
+    .modal_text {
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: "Open Sans";
+    }
+    .modal_message {
+      //   width: 253px;
+      margin-top: 1rem;
+
+      font-weight: 400;
+      font-family: "Open Sans";
+      font-size: 0.875rem;
+    }
+    .modal_btn {
+      margin-top: 1rem;
+      width: 10.625rem;
+      height: 2.5rem;
+      background-color: #32996a;
+      color: white;
+      font-family: "Open Sans";
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+    }
+    .modal_contact_container {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      border-radius: 0px 0px 1.75rem 1.75rem;
+      justify-content: space-between;
+      /* gap: 4rem; */
+      background-color: #f0f6f8;
+      width: 100%;
+      /* justify-content: space-evenly; */
+      /* margin: 1rem; */
+      padding: 0.4rem 2.5rem;
+      height: 3.75rem;
+      .modal_contact {
+        display: flex;
+        justify-content: center;
+        .contact_text_container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .contact_text {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.192rem;
+          }
+          .contact {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.192rem;
+          }
+        }
+      }
+    }
+  }
+}
