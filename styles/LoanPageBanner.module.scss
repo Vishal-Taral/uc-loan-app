@@ -39,8 +39,10 @@
   }
   .loanFormContainer {
     position: absolute;
-    width: 1110px;
-    height: 146px;
+    max-width: 1110px;
+    width: 90%;
+    min-height: 146px;
+    height: auto;
     left: 50%;
     transform: translate(-50%, 50%);
     top: 20.5rem;

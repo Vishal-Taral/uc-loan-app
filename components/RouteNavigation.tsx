@@ -10,7 +10,7 @@ export function RouteNavigation(props: RouteNavigationProps) {
         <Link href="/flights">Home</Link>
       </div>
       <div className={styles.navigation_arrow}>{">"}</div>
-      <div>Loan page</div>
+      <div>Loans</div>
     </div>
   );
 }

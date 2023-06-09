@@ -1,25 +1,38 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 // import styles from "@/styles/Home.module.css";
 import LoanPageBanner from "@/components/LoanPageBanner";
 import ContactBanner from "@/components/ContactBanner";
 import LoanAdvantage from "@/components/LoanAdvantage";
+import { useEffect, useState } from "react";
+import { getLoanPageData } from "@/constants/api_service";
+import { LoanPageData } from "@/models";
 
-const inter = Inter({ subsets: ["latin"] });
+const Home = () => {
+  const [loanPageData, setLoanPageData] = useState<LoanPageData>({});
+  useEffect(() => {
+    getLoanData();
+  }, []);
 
-export default function Home() {
+  const getLoanData = async () => {
+    const Data = await getLoanPageData();
+    setLoanPageData(Data);
+  };
   return (
     <>
       <section>
-        <LoanPageBanner />
+        {loanPageData.bannerData && (
+          <LoanPageBanner bannerData={loanPageData.bannerData} />
+        )}
       </section>
       <section>
         <LoanAdvantage />
       </section>
       <section style={{ marginTop: "13rem" }}>
-        <ContactBanner />{" "}
+        {loanPageData.contactUsData && (
+          <ContactBanner contactUsData={loanPageData.contactUsData} />
+        )}
       </section>
     </>
   );
-}
+};
+
+export default Home;
