@@ -1,40 +1,46 @@
 import styles from "../styles/LoanPageBanner.module.scss";
 import RouteNavigation from "./RouteNavigation";
-import ContactBanner from "./ContactBanner";
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useEffect } from "react";
 import LoanBannerImage from "../public/Images/loanBannerImage.svg";
 import { UseFormRegister, useForm } from "react-hook-form";
 import Image from "next/image";
 import ThanksModal from "./ThanksModal";
-// import styles from "../styles/LoanPage.module.scss";
-import LoanAdvantage from "@/components/LoanAdvantage";
+import { getCities, loanEnquiry } from "../constants/api_service";
+import { City, LoanBannerProps, LoanFormValues } from "@/models";
 /* eslint-disable-next-line */
-export interface LoanPageBannerProps {}
 
-interface LoanFormValues {
-  name: string;
-  mobileNumber: string;
-  email: string;
-  city: string;
-}
-
-export function LoanPageBanner(props: LoanPageBannerProps) {
+export function LoanPageBanner({ bannerData }: LoanBannerProps) {
   const loanForm = useForm<LoanFormValues>();
-  const { register, control, handleSubmit, formState } = loanForm;
+  const { register, handleSubmit, formState } = loanForm;
+  const [cities, setCities] = useState<City[]>([]);
   const { errors } = formState;
+
+  useEffect(() => {
+    getCitiesData();
+  }, []);
+
+  const getCitiesData = async () => {
+    const citiesData = await getCities();
+    setCities(citiesData);
+  };
+
+  const postLoanEnquiry = async (data: LoanFormValues) => {
+    await loanEnquiry(data);
+    setShowModal(!showModal);
+  };
+
   const bannerTexts = {
     header: "udChalo De Aapka Saath, Jab",
     headerHighlighted: " Paiso Ki Ho Baat",
     subHeader: "Get Personal Loan Upto 7.5 Lacs",
     timeLine: "Disbursed within 48 hrs",
   };
-  const [selectedOption, setSelectedOption] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const onsubmit = (data: LoanFormValues) => {
-    console.log("form Submitted", data);
-    setShowModal(!showModal);
+    postLoanEnquiry(data);
   };
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight"];
     const allowedCharacters = [
@@ -71,8 +77,11 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
       className={styles.inp}
     >
       <option value="">Select City</option>
-      <option value="Pune">Pune</option>
-      <option value="Mumbai">Mumbai</option>
+      {cities.map((city) => (
+        <option key={city.id} value={city.name}>
+          {city.name}
+        </option>
+      ))}
     </select>
   ));
   Select.displayName = "Select";
@@ -83,16 +92,15 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
       <div className={styles.loanBanner}>
         <div className={styles.loanTexts}>
           <h1 className={styles.header}>
-            {bannerTexts.header}
+            {bannerData.header}
             <span className={styles.headerHighlight}>
               {bannerTexts.headerHighlighted}
             </span>
           </h1>
-          <h2 className={styles.subHeader}>{bannerTexts.subHeader}</h2>
-          <h2 className={styles.timeLine}>{bannerTexts.timeLine}</h2>
+          <h2 className={styles.subHeader}>{bannerData.subHeader}</h2>
+          <h2 className={styles.timeLine}>{bannerData.timeLine}</h2>
         </div>
         <div>
-          {/* <LoanBannerImage /> */}
           <Image src={LoanBannerImage} alt="LoanBannerImage" />
         </div>
       </div>
@@ -111,7 +119,9 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
                 },
               })}
             />
-            <p className={styles.error}>{errors.name?.message}</p>
+            {errors.name && (
+              <p className={styles.error}>{errors.name?.message}</p>
+            )}
           </div>
           <div>
             <input
@@ -148,7 +158,9 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
                 },
               })}
             />
-            <p className={styles.error}>{errors.email?.message}</p>
+            {errors.email && (
+              <p className={styles.error}>{errors.email?.message}</p>
+            )}
           </div>
           <div>
             <span className={styles.inp_box_heading}>City</span>
@@ -160,7 +172,9 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
                 },
               })}
             />
-            <p className={styles.error}>{errors.city?.message}</p>
+            {errors.city && (
+              <p className={styles.error}>{errors.city?.message}</p>
+            )}
           </div>
           <button className={styles.submitBtn}>Submit</button>
         </form>
