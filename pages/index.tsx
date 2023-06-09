@@ -17,8 +17,8 @@ export default function Home() {
       <section>
         <LoanAdvantage />
       </section>
-      <section style={{ marginTop: "13rem" }}>
-        <ContactBanner />{" "}
+      <section>
+        <ContactBanner />
       </section>
     </>
   );

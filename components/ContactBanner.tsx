@@ -8,7 +8,9 @@ type Props = {};
 const ContactBanner = (props: Props) => {
   return (
     <div className={styles.contact_container}>
+      {/* <div className={styles.contact_content}> */}
       <h2 className={styles.contact_header}>Contact US</h2>
+      {/* </div> */}
       <div className={styles.contact_content}>
         <div className={styles.contact_cont_container}>
           {/* <ContactUsCallImage /> */}

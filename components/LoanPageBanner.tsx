@@ -93,7 +93,11 @@ export function LoanPageBanner(props: LoanPageBannerProps) {
         </div>
         <div>
           {/* <LoanBannerImage /> */}
-          <Image src={LoanBannerImage} alt="LoanBannerImage" />
+          <Image
+            src={LoanBannerImage}
+            alt="LoanBannerImage"
+            className={styles.man_image}
+          />
         </div>
       </div>
       <div className={styles.loanFormContainer}>

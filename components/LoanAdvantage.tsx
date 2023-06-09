@@ -1,14 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../styles/LoanAdvantage.module.scss";
 import LoanCards from "./LoanCards";
-import poweredByImage from "../public/Images/poweredByImage.png";
+import styles from "../styles/LoanAdvantage.module.scss";
 import MagninfyingIcon from "../public/Images/magninfyingIcon.svg";
 import CheckIcon from "../public/Images/CheckIcon.svg";
+import poweredByImage from "../public/Images/poweredByImage.svg";
 
-type Props = {};
-
-const LoanAdvantage = (props: Props) => {
+const LoanAdvantage = () => {
   const required_documents_data = [
     {
       documentName: "Pan Card",
@@ -33,32 +31,33 @@ const LoanAdvantage = (props: Props) => {
   const half = Math.ceil(required_documents_data.length / 2); //array devided by 2
   const firstHalfOfArray = required_documents_data.slice(0, half);
   const secondHalfOfArray = required_documents_data.slice(half);
-
   return (
-    <div className={styles.loan_advantages}>
-      <div className={styles.required_documents_main}>
-        <div className={styles.required_documents}>
-          <div className={styles.magnifying_glass_image_container}>
-            {/* <MagninfyingIcon className={styles.magnifying_glass_image} /> */}
-
+    <>
+      <section className={styles.loanCard}>
+        <h1 className={styles.heading}>udChalo Loan Advantage</h1>
+        <LoanCards />
+      </section>
+      <div className={styles.loan_advantage}>
+        <div className={styles.container}>
+          <div className={styles.magnifying_glass_container}>
             <Image
-              priority
               src={MagninfyingIcon}
-              width={230}
-              height={230}
-              alt="magnifying image"
-              className={styles.magnifying_glass_image}
+              alt="magnifyingGlassImage"
+              priority
+              className={styles.magnifying_glass}
             />
           </div>
 
-          <div className={styles.document_main_container}>
+          <div>
             <h1 className={styles.title}>Documents Required</h1>
             <div className={styles.document_list}>
-              <div className={styles.documents}>
+              <div>
                 {firstHalfOfArray.map((data, index) => {
                   return (
-                    <div key={index} className={styles.checkIcon_documentName}>
-                      {/* <CheckIcon /> */}
+                    <div
+                      key={index}
+                      className={styles.checkIcon_and_documentName}
+                    >
                       <Image
                         priority
                         src={CheckIcon}
@@ -72,11 +71,14 @@ const LoanAdvantage = (props: Props) => {
                   );
                 })}
               </div>
-              <div className={styles.documents}>
+
+              <div>
                 {secondHalfOfArray.map((data, index) => {
                   return (
-                    <div key={index} className={styles.checkIcon_documentName}>
-                      {/* <CheckIcon /> */}
+                    <div
+                      key={index}
+                      className={styles.checkIcon_and_documentName}
+                    >
                       <Image
                         priority
                         src={CheckIcon}
@@ -93,23 +95,18 @@ const LoanAdvantage = (props: Props) => {
             </div>
           </div>
         </div>
+        <div className={styles.powered_by}>
+          <h1 className={styles.powered_by_title}>Powered by : </h1>
+          <Image
+            src={poweredByImage}
+            width={150}
+            height={30}
+            alt="poweredByImage"
+            priority
+          />
+        </div>
       </div>
-
-      <div className={styles.loan_advantage_card}>
-        <LoanCards />
-      </div>
-
-      <div className={styles.powered_by}>
-        <h1>Powered by : </h1>
-        <Image
-          src={poweredByImage}
-          width={150}
-          height={30}
-          alt="poweredByImage"
-          priority
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

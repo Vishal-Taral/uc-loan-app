@@ -6,6 +6,12 @@
   background-color: #f0f6f8;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @media only screen and (max-width : 800px) {
+    display: flex;
+    align-items: flex-start;
+  }
+
   // max-width: 90rem;
   // max-height: 11.813rem;
   .contact_header {
@@ -13,14 +19,28 @@
     font-weight: 600;
     font-size: 1.375rem;
     line-height: 1.873rem;
+
+    @media only screen and (max-width : 800px) {
+      padding-inline: 2rem;
+    }
   }
+
   .contact_content {
     display: flex;
     gap: 14rem;
     padding: 2rem;
+
+    @media only screen and (max-width:800px) {
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
     .contact_cont_container {
       display: flex;
     }
+
     .contact_text {
       font-family: "Open Sans";
       font-style: normal;
@@ -28,6 +48,7 @@
       font-size: 1rem;
       line-height: 1.375rem;
     }
+
     .contact {
       font-family: "Open Sans";
       font-style: normal;
