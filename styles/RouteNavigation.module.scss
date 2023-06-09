@@ -1,10 +1,10 @@
 .route_navigation {
   display: flex;
   flex-direction: row;
-  padding-left: 10vmax;
+  padding-left: 14vmax;
   padding-top: 0.5vmax;
   padding-bottom: 0.5vmax;
-  background-color: #ebf6fd;
+  background-color: rgba(229, 237, 244, 0.3);
   font-size: 1vmax;
 
   .navigation_link {
@@ -16,7 +16,7 @@
   }
 }
 .route_navigation > div {
-  padding-right: 2vmax;
+  padding-right: 1vmax;
 }
 .route_navigation > div:last-child {
   color: #858585;
