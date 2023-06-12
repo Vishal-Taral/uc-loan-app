@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 
-export interface City {
-  id: number;
-  name: string;
-}
+// export interface City {
+//   name: string;
+// }
 export interface LoanFormValues {
   name: string;
   phone: string;

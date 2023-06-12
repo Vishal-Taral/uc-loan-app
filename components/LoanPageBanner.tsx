@@ -6,15 +6,14 @@ import { UseFormRegister, useForm } from "react-hook-form";
 import Image from "next/image";
 import ThanksModal from "./ThanksModal";
 import { getCities, loanEnquiry } from "../constants/api_service";
-import { City, LoanBannerProps, LoanFormValues } from "@/models";
+import { LoanBannerProps, LoanFormValues } from "@/models";
 import ThanksContent from "./ThanksContent";
-import { cities as cityArray } from "../constants/cities.json";
 /* eslint-disable-next-line */
 
 export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
   const loanForm = useForm<LoanFormValues>();
   const { register, handleSubmit, formState } = loanForm;
-  const [cities, setCities] = useState<City[]>([]);
+  const [cities, setCities] = useState<[]>([]);
   const { errors } = formState;
 
   useEffect(() => {
@@ -22,38 +21,26 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
   }, []);
 
   const getCitiesData = async () => {
-    // const citiesData = await getCities();
-    const citiesData = cityArray;
-    setCities(citiesData);
+    const citiesData = await getCities();
+    const cityArray = citiesData.find(
+      (data: any) => data.name === "loanEnquiryCity"
+    );
+    setCities(cityArray.target);
   };
 
   const postLoanEnquiry = async (data: LoanFormValues) => {
     try {
       await loanEnquiry(data);
-      setShowModal(true); // Show the modal after the API request is successful
+      setShowModal(true);
     } catch (error) {
       console.log(error);
     }
   };
 
-  // const bannerTexts = {
-  //   header: "udChalo De Aapka Saath, Jab",
-  //   headerHighlighted: " Paiso Ki Ho Baat",
-  //   subHeader: "Get Personal Loan Upto 7.5 Lacs",
-  //   timeLine: "Disbursed within 48 hrs",
-  // };
   const [showModal, setShowModal] = useState(false);
 
   const onsubmit = (data: LoanFormValues) => {
-    console.log(data);
-    const modiFiedData = {
-      name: data.name,
-      phone: `+91${data.phone}`,
-      email: data.email,
-      city: data.city,
-    };
-
-    postLoanEnquiry(modiFiedData);
+    postLoanEnquiry(data);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -92,9 +79,9 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
       className={styles.inp}
     >
       <option value="">Select City</option>
-      {cities.map((city) => (
-        <option key={city.id} value={city.name}>
-          {city.name}
+      {cities.map((city, index) => (
+        <option key={index} value={city}>
+          {city}
         </option>
       ))}
     </select>
@@ -116,7 +103,12 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
           <h2 className={styles.timeLine}>{bannerData?.timeLine}</h2>
         </div>
         <div>
-          <Image src={LoanBannerImage} alt="LoanBannerImage" />
+          {/* <LoanBannerImage /> */}
+          <Image
+            src={LoanBannerImage}
+            alt="LoanBannerImage"
+            className={styles.man_image}
+          />
         </div>
       </div>
       <div className={styles.loanFormContainer}>
@@ -196,11 +188,8 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
       </div>
 
       {showModal && (
-        <ThanksModal
-          onClose={() => setShowModal(false)}
-          contactUsData={contactUsData}
-        >
-          <ThanksContent contactUsData={contactUsData} />
+        <ThanksModal onClose={() => setShowModal(false)}>
+          {contactUsData && <ThanksContent contactUsData={contactUsData} />}
         </ThanksModal>
       )}
     </div>

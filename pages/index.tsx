@@ -5,6 +5,7 @@ import LoanAdvantage from "@/components/LoanAdvantage";
 import { useEffect, useState } from "react";
 import { getLoanPageData } from "@/constants/api_service";
 import { LoanPageData } from "@/models";
+import UcHeader from "@/components/UcHeader";
 
 const Home = () => {
   const [loanPageData, setLoanPageData] = useState<LoanPageData>({});
@@ -19,6 +20,9 @@ const Home = () => {
   return (
     <>
       <section>
+        <UcHeader />
+      </section>
+      <section>
         {loanPageData.bannerData && loanPageData.contactUsData && (
           <LoanPageBanner
             bannerData={loanPageData.bannerData}
@@ -29,7 +33,7 @@ const Home = () => {
       <section>
         <LoanAdvantage />
       </section>
-      <section style={{ marginTop: "13rem" }}>
+      <section>
         {loanPageData.contactUsData && (
           <ContactBanner contactUsData={loanPageData.contactUsData} />
         )}
