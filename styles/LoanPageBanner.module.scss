@@ -1,23 +1,186 @@
+// .container {
+//   background-color: rgba(229, 237, 244, 0.3);
+
+//   .loanBanner {
+//     display: flex;
+//     justify-content: flex-end;
+//     padding: 1rem 5.5rem;
+
+//     .loanTexts {
+//       position: absolute;
+//       left: 208px;
+
+//       .header {
+//         color: #454545;
+//         font-family: "Poppins";
+//         font-weight: 300;
+//         font-size: 3.125rem;
+//         max-width: 633px;
+
+//         .headerHighlight {
+//           color: #4885e0;
+//           font-weight: 600;
+//         }
+//       }
+
+//       .subHeader {
+//         background-color: #f6a974;
+//         color: white;
+//         font-size: 1.5rem;
+//         line-height: 1.875rem;
+//         font-weight: 500;
+//         max-width: 382px;
+//         padding: 6px 10px;
+//         border-radius: 4px;
+//       }
+
+//       .timeLine {
+//         font-weight: 500;
+//         font-size: 0.875rem;
+//         color: #000000;
+//         line-height: 1.875rem;
+//         margin-top: 0.5rem;
+//       }
+//     }
+//   }
+
+//   .loanFormContainer {
+//     position: absolute;
+//     width: 1110px;
+//     height: 146px;
+//     left: 50%;
+//     transform: translate(-50%, 50%);
+//     top: 20.5rem;
+//     background-color: white;
+//     padding: 1rem;
+//     border-radius: 16px;
+
+//     .header {
+//       font-family: "Open Sans";
+//       font-style: normal;
+//       font-weight: 600;
+//       font-size: 22px;
+//       line-height: 30px;
+//     }
+
+//     margin: 0% auto;
+//     justify-content: center;
+
+//     .loanForm {
+//       display: flex;
+//       justify-content: space-between;
+//       padding: 1rem 0rem;
+
+//       .inp_box_heading {
+//         color: #858585;
+//         font-size: 0.8rem;
+//         position: absolute;
+//         margin-top: -0.6rem;
+//         margin-left: 0.8rem;
+//         background-color: white;
+//         padding-left: 0.3rem;
+//         padding-right: 0.3rem;
+//         z-index: 1;
+//       }
+
+//       .inp {
+//         // position: absolute;
+//         //   display: flex;
+//         //   flex-direction: column;
+//         border: 1px solid #c5d4e3;
+//         border-radius: 10px;
+//         font-weight: 400;
+//         padding: 10px 15px;
+//         width: 253px;
+//       }
+
+//       input[type="number"]::-webkit-inner-spin-button,
+//       input[type="number"]::-webkit-outer-spin-button {
+//         -webkit-appearance: none;
+//         margin: 0;
+//       }
+
+//       input[type="number"] {
+//         -moz-appearance: textfield;
+//       }
+
+//       .error {
+//         color: red;
+//         padding: 0.2rem;
+//         font-size: 0.875rem;
+//       }
+//     }
+
+//     .submitBtn {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 0px 138px;
+//       height: 48px;
+//       //   position: absolute;
+//       //   width: 220px;
+//       //   height: 48px;
+//       //   left: 610px;
+//       //   top: 572px;
+//       position: absolute;
+//       left: 50%;
+//       bottom: -32%;
+//       transform: translate(-50%, -50%);
+//       background: #32996a;
+//       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//       border-radius: 8px;
+//       font-family: "Open Sans";
+//       font-style: normal;
+//       font-weight: 700;
+//       font-size: 14px;
+//       line-height: 26px;
+//       //   z-index: 2;
+//       /* identical to box height, or 186% */
+//       color: white;
+//       display: flex;
+//       align-items: center;
+//       text-align: center;
+//       text-transform: capitalize;
+//     }
+//   }
+// }
+
+/* **************************************** */
+
 .container {
   background-color: rgba(229, 237, 244, 0.3);
+
+  @media only screen and (max-width : 600px) {
+    height: 130vh;
+  }
+
   .loanBanner {
     display: flex;
     justify-content: flex-end;
-    padding: 1rem 5.5rem;
+    // justify-content: space-between;
+    // padding: 1rem 5.5rem;
+    padding: 2% 10%;
+
     .loanTexts {
       position: absolute;
-      left: 208px;
+      // left: 208px;
+      left: 12%;
+      // width: 60rem;
+
       .header {
         color: #454545;
         font-family: "Poppins";
         font-weight: 300;
-        font-size: 3.125rem;
+        font-size: 3.1rem;
         max-width: 633px;
+
         .headerHighlight {
           color: #4885e0;
           font-weight: 600;
         }
       }
+
       .subHeader {
         background-color: #f6a974;
         color: white;
@@ -28,6 +191,7 @@
         padding: 6px 10px;
         border-radius: 4px;
       }
+
       .timeLine {
         font-weight: 500;
         font-size: 0.875rem;
@@ -36,12 +200,19 @@
         margin-top: 0.5rem;
       }
     }
+
+    .man_image {
+      width: 40rem;
+      height: 40rem;
+    }
+
   }
+
   .loanFormContainer {
     position: absolute;
-    max-width: 1110px;
+    max-width: 80rem;
+    min-height: 11rem;
     width: 90%;
-    min-height: 146px;
     height: auto;
     left: 50%;
     transform: translate(-50%, 50%);
@@ -49,19 +220,40 @@
     background-color: white;
     padding: 1rem;
     border-radius: 16px;
+
     .header {
       font-family: "Open Sans";
       font-style: normal;
       font-weight: 600;
       font-size: 22px;
       line-height: 30px;
+
+      @media only screen and (max-width: 800px) {
+        text-align: center;
+      }
     }
+
     margin: 0% auto;
     justify-content: center;
+
     .loanForm {
-      display: flex;
-      justify-content: space-between;
+      // display: flex;
+      // justify-content: space-between;
+      // padding: 1rem 0rem;
+
       padding: 1rem 0rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 18rem));
+      grid-gap: 1rem;
+      width: 100%;
+      grid-gap: 1rem;
+      // margin: 0% auto;
+      justify-content: center;
+
+      @media only screen and (max-width:607px) {
+        grid-template-columns: 100%;
+      }
+
       .inp_box_heading {
         color: #858585;
         font-size: 0.8rem;
@@ -82,8 +274,13 @@
         border-radius: 10px;
         font-weight: 400;
         padding: 10px 15px;
-        width: 253px;
+        width: 18rem;
+
+        @media only screen and (max-width: 607px) {
+          width: 100%;
+        }
       }
+
       input[type="number"]::-webkit-inner-spin-button,
       input[type="number"]::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -93,6 +290,7 @@
       input[type="number"] {
         -moz-appearance: textfield;
       }
+
       .error {
         color: red;
         padding: 0.2rem;
@@ -114,7 +312,7 @@
       //   top: 572px;
       position: absolute;
       left: 50%;
-      bottom: -32%;
+      bottom: -25%;
       transform: translate(-50%, -50%);
       background: #32996a;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

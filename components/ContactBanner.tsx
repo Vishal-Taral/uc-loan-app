@@ -8,7 +8,9 @@ import { ContactBannerProps, ContactInfo } from "@/models";
 const ContactBanner = ({ contactUsData }: ContactBannerProps) => {
   return (
     <div className={styles.contact_container}>
+      {/* <div className={styles.contact_content}> */}
       <h2 className={styles.contact_header}>Contact US</h2>
+      {/* </div> */}
       <div className={styles.contact_content}>
         {contactUsData.map((contactInfo: ContactInfo) => (
           <div key={contactInfo.id}>

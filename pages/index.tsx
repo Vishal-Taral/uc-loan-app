@@ -26,7 +26,7 @@ const Home = () => {
       <section>
         <LoanAdvantage />
       </section>
-      <section style={{ marginTop: "13rem" }}>
+      <section>
         {loanPageData.contactUsData && (
           <ContactBanner contactUsData={loanPageData.contactUsData} />
         )}

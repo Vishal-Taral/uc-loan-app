@@ -1,98 +1,109 @@
-.loan_advantages {
-    height: 30rem;
+.loanCard {
+    position: relative;
+    top: 6rem;
 
-    .required_documents_main {
+    .heading {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+        margin-left: 17.5%;
+
+        @media only screen and (max-width : 800px) {
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+}
+
+.loan_advantage {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 10%;
+
+    .container {
+        width: 100%;
+        background-color: #ebe6e6d1;
+        border-radius: 2.5rem 0;
+        padding: 10% 2% 4% 3%;
         display: flex;
+        gap: 8%;
         justify-content: center;
-        align-items: center;
-        // margin-top: 17%;
-        position: relative;
-        top: 40%;
 
-        .required_documents {
-            background: #ebe6e6d1;
-            border-radius: 2.5rem 0;
-            width: 80%;
-            padding: 2rem;
+        @media only screen and (max-width : 800px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 20% 2% 4% 3%;
+
+        }
+
+        .magnifying_glass_container {
+            background: linear-gradient(172.57deg, #F2B63E -16.32%, rgba(242, 182, 62, 0.87) -8.36%, rgba(242, 182, 62, 0.67) 3.58%, rgba(242, 182, 62, 0.49) 16.85%, rgba(242, 182, 62, 0.34) 30.13%, rgba(242, 182, 62, 0.22) 44.72%, rgba(242, 182, 62, 0.12) 59.32%, rgba(242, 182, 62, 0.05) 75.25%, rgba(242, 182, 62, 0.01) 92.5%, rgba(242, 182, 62, 0) 116.39%);
+            width: 18rem;
+            height: 18rem;
+            border-radius: 50%;
             display: flex;
-            padding-top: 10rem;
-            gap: 3rem;
-            // background-color: rgba(255, 255, 255, 0.82);
-            // height: 10rem;
+            justify-content: center;
+            align-items: center;
+            // padding: 0.5rem;
+
+            .magnifying_glass {
+                width: 77%;
+                margin-left: 10%;
+                margin-bottom: 6%;
+            }
+        }
+
+        .title {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.5rem;
+            // line-height: 30px;
 
             @media only screen and (max-width : 800px) {
-                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .document_list {
+            display: flex;
+            gap: 5rem;
+            margin-top: 2rem;
+
+            @media only screen and (max-width : 800px) {
+                padding: 0 1.5rem;
+                gap: 2rem;
+            }
+
+            .checkIcon_and_documentName {
+                display: flex;
+                gap: 2rem;
+                margin-top: 1rem;
                 align-items: center;
-            }
 
-            .magnifying_glass_image_container {
-                width: 15.5rem;
-                height: 15.5rem;
-                border-radius: 50%;
-                background: linear-gradient(172.57deg, #F2B63E -16.32%, rgba(242, 182, 62, 0.87) -8.36%, rgba(242, 182, 62, 0.67) 3.58%, rgba(242, 182, 62, 0.49) 16.85%, rgba(242, 182, 62, 0.34) 30.13%, rgba(242, 182, 62, 0.22) 44.72%, rgba(242, 182, 62, 0.12) 59.32%, rgba(242, 182, 62, 0.05) 75.25%, rgba(242, 182, 62, 0.01) 92.5%, rgba(242, 182, 62, 0) 116.39%);
-
-                .magnifying_glass_image {
-                    width: 12rem;
-                    // width: 80%;
-                    position: relative;
-                    top: 0%;
-                    left: 17%;
-                }
-            }
-
-            .document_main_container {
-                margin-left: 2rem;
-
-                .title {
+                .document_name {
                     font-family: 'Open Sans';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 1rem;
-                }
-
-                .document_list {
-                    display: flex;
-                    gap: 4rem;
-
-                    @media only screen and (max-width : 800px) {
-                        align-items: center;
-                        justify-content: center;
-                        gap: 2rem;
-                    }
-
-                    .checkIcon_documentName {
-                        display: flex;
-                        align-items: center;
-                        gap: 2rem;
-
-                        @media only screen and (max-width: 800px) {
-                            gap: 0.5rem;
-                        }
-
-                        .document_name {
-                            font-family: 'Open Sans';
-                            font-style: normal;
-                            font-weight: 600;
-                            font-size: 1rem;
-                            color: #545454;
-                        }
-                    }
-
+                    // line-height: 16px;
                 }
             }
         }
     }
 
-    .loan_advantage_card {
-        position: relative;
-        top: -94%;
-        left: 0%;
-    }
-
     .powered_by {
         display: flex;
         justify-content: center;
-        align-items: center;
-        gap: 0.3rem;
+        margin-top: 2rem;
+
+        .powered_by_title {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
     }
 }

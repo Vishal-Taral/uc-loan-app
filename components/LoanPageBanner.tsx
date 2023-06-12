@@ -101,7 +101,12 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
           <h2 className={styles.timeLine}>{bannerData.timeLine}</h2>
         </div>
         <div>
-          <Image src={LoanBannerImage} alt="LoanBannerImage" />
+          {/* <LoanBannerImage /> */}
+          <Image
+            src={LoanBannerImage}
+            alt="LoanBannerImage"
+            className={styles.man_image}
+          />
         </div>
       </div>
       <div className={styles.loanFormContainer}>
