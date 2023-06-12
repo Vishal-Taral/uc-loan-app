@@ -11,6 +11,7 @@
   .modal_content {
     display: flex;
     flex-direction: column;
+    height: 23rem;
     align-items: center;
     position: absolute;
     background-color: #ffffff;
@@ -21,6 +22,11 @@
     bottom: 31.04%;
     padding-top: 1rem;
     border-radius: 1.75rem;
+    .modal_content_container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
     .close_btn {
       cursor: pointer;
       position: absolute;
@@ -58,6 +64,7 @@
     .modal_contact_container {
       display: flex;
       position: absolute;
+
       bottom: 0;
       border-radius: 0px 0px 1.75rem 1.75rem;
       justify-content: space-between;

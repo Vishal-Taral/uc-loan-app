@@ -7,9 +7,11 @@ import Image from "next/image";
 import ThanksModal from "./ThanksModal";
 import { getCities, loanEnquiry } from "../constants/api_service";
 import { City, LoanBannerProps, LoanFormValues } from "@/models";
+import ThanksContent from "./ThanksContent";
+import { cities as cityArray } from "../constants/cities.json";
 /* eslint-disable-next-line */
 
-export function LoanPageBanner({ bannerData }: LoanBannerProps) {
+export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
   const loanForm = useForm<LoanFormValues>();
   const { register, handleSubmit, formState } = loanForm;
   const [cities, setCities] = useState<City[]>([]);
@@ -20,25 +22,38 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
   }, []);
 
   const getCitiesData = async () => {
-    const citiesData = await getCities();
+    // const citiesData = await getCities();
+    const citiesData = cityArray;
     setCities(citiesData);
   };
 
   const postLoanEnquiry = async (data: LoanFormValues) => {
-    await loanEnquiry(data);
-    setShowModal(!showModal);
+    try {
+      await loanEnquiry(data);
+      setShowModal(true); // Show the modal after the API request is successful
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const bannerTexts = {
-    header: "udChalo De Aapka Saath, Jab",
-    headerHighlighted: " Paiso Ki Ho Baat",
-    subHeader: "Get Personal Loan Upto 7.5 Lacs",
-    timeLine: "Disbursed within 48 hrs",
-  };
+  // const bannerTexts = {
+  //   header: "udChalo De Aapka Saath, Jab",
+  //   headerHighlighted: " Paiso Ki Ho Baat",
+  //   subHeader: "Get Personal Loan Upto 7.5 Lacs",
+  //   timeLine: "Disbursed within 48 hrs",
+  // };
   const [showModal, setShowModal] = useState(false);
 
   const onsubmit = (data: LoanFormValues) => {
-    postLoanEnquiry(data);
+    console.log(data);
+    const modiFiedData = {
+      name: data.name,
+      phone: `+91${data.phone}`,
+      email: data.email,
+      city: data.city,
+    };
+
+    postLoanEnquiry(modiFiedData);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -92,13 +107,13 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
       <div className={styles.loanBanner}>
         <div className={styles.loanTexts}>
           <h1 className={styles.header}>
-            {bannerData.header}
+            {bannerData?.header}
             <span className={styles.headerHighlight}>
-              {bannerTexts.headerHighlighted}
+              {bannerData?.headerHighlighted}
             </span>
           </h1>
-          <h2 className={styles.subHeader}>{bannerData.subHeader}</h2>
-          <h2 className={styles.timeLine}>{bannerData.timeLine}</h2>
+          <h2 className={styles.subHeader}>{bannerData?.subHeader}</h2>
+          <h2 className={styles.timeLine}>{bannerData?.timeLine}</h2>
         </div>
         <div>
           <Image src={LoanBannerImage} alt="LoanBannerImage" />
@@ -120,7 +135,7 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
               })}
             />
             {errors.name && (
-              <p className={styles.error}>{errors.name?.message}</p>
+              <p className={styles.error}>{errors?.name?.message}</p>
             )}
           </div>
           <div>
@@ -131,7 +146,7 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
               placeholder="Phone Number"
               onKeyDown={(e) => handleKeyDown(e)}
               maxLength={10}
-              {...register("mobileNumber", {
+              {...register("phone", {
                 required: {
                   value: true,
                   message: "Phone number is required",
@@ -142,8 +157,8 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
                 },
               })}
             />
-            {errors.mobileNumber && (
-              <p className={styles.error}>{errors.mobileNumber?.message}</p>
+            {errors?.phone && (
+              <p className={styles.error}>{errors?.phone?.message}</p>
             )}
           </div>
           <div>
@@ -159,7 +174,7 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
               })}
             />
             {errors.email && (
-              <p className={styles.error}>{errors.email?.message}</p>
+              <p className={styles.error}>{errors?.email?.message}</p>
             )}
           </div>
           <div>
@@ -173,14 +188,21 @@ export function LoanPageBanner({ bannerData }: LoanBannerProps) {
               })}
             />
             {errors.city && (
-              <p className={styles.error}>{errors.city?.message}</p>
+              <p className={styles.error}>{errors?.city?.message}</p>
             )}
           </div>
           <button className={styles.submitBtn}>Submit</button>
         </form>
       </div>
 
-      {showModal && <ThanksModal onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <ThanksModal
+          onClose={() => setShowModal(false)}
+          contactUsData={contactUsData}
+        >
+          <ThanksContent contactUsData={contactUsData} />
+        </ThanksModal>
+      )}
     </div>
   );
 }

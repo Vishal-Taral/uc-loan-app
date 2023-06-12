@@ -19,8 +19,11 @@ const Home = () => {
   return (
     <>
       <section>
-        {loanPageData.bannerData && (
-          <LoanPageBanner bannerData={loanPageData.bannerData} />
+        {loanPageData.bannerData && loanPageData.contactUsData && (
+          <LoanPageBanner
+            bannerData={loanPageData.bannerData}
+            contactUsData={loanPageData.contactUsData}
+          />
         )}
       </section>
       <section>

@@ -6,7 +6,7 @@ export interface City {
 }
 export interface LoanFormValues {
   name: string;
-  mobileNumber: string;
+  phone: string;
   email: string;
   city: string;
 }
@@ -36,5 +36,6 @@ export interface ContactBannerProps {
 }
 
 export interface LoanBannerProps {
-  bannerData: LoanPageBannerTexts;
+  bannerData?: LoanPageBannerTexts;
+  contactUsData?: ContactInfo[];
 }
