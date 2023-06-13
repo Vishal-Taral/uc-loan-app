@@ -13,6 +13,7 @@ export const getCities = async () => {
 
 export const loanEnquiry = async (data: LoanFormValues) => {
   try {
+    // console.log(data);
     const response = await fetch(LOAN_ENQUIRY, {
       method: "POST",
       mode: "cors",
