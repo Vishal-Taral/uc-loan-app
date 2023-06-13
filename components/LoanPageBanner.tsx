@@ -124,6 +124,10 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
                   value: true,
                   message: "Name is required",
                 },
+                pattern: {
+                  value: /^[A-Za-z ]+$/,
+                  message: "Invalid name format",
+                },
               })}
             />
             {errors.name && (
