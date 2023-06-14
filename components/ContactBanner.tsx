@@ -1,6 +1,4 @@
 import React from "react";
-
-import Image from "next/image";
 import styles from "../styles/ContactBanner.module.scss";
 import ContactContent from "./ContactContent";
 import { ContactBannerProps, ContactInfo } from "@/models";
@@ -8,9 +6,7 @@ import { ContactBannerProps, ContactInfo } from "@/models";
 const ContactBanner = ({ contactUsData }: ContactBannerProps) => {
   return (
     <div className={styles.contact_container}>
-      {/* <div className={styles.contact_content}> */}
       <h2 className={styles.contact_header}>Contact US</h2>
-      {/* </div> */}
       <div className={styles.contact_content}>
         {contactUsData.map((contactInfo: ContactInfo) => (
           <div key={contactInfo.id}>
@@ -28,14 +24,3 @@ const ContactBanner = ({ contactUsData }: ContactBannerProps) => {
 };
 
 export default ContactBanner;
-
-// map((contactInfo: ContactInfo) => (
-//   <div key={contactInfo.id}>
-//     <ContactContent
-//       id={contactInfo.id}
-//       contactIcon={contactInfo.contactIcon}
-//       contactNo={contactInfo.contactNo}
-//       contactText={contactInfo.contactText}
-//     />
-//   </div>
-// ))

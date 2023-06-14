@@ -7,7 +7,6 @@ import ContactUSMessageImage from "../public/images/contactUsMessageIcon.svg";
 const ContactContent = (props: ContactInfo) => {
   return (
     <div className={styles.contact_cont_container}>
-      {/* <ContactUSMessageImage /> */}
       <Image
         src={
           props.contactIcon === "images/contactUsCallIcon.svg"

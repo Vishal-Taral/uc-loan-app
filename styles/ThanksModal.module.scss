@@ -1,20 +1,13 @@
 .modal_container {
-  //   display: none; /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: hidden;
-  /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.6);
 
-  /* Black w/ opacity */
   .modal_content {
     display: flex;
     height: 23rem;
@@ -30,6 +23,7 @@
     bottom: 31.04%;
     padding-top: 1rem;
     border-radius: 1.75rem;
+
     .modal_content_container {
       display: flex;
       align-items: center;
@@ -37,7 +31,6 @@
     }
 
     @media only screen and (max-width: 1000px) {
-      // width: 100%;
       left: 50%;
       width: 70%;
       transform: translate(-50%);
@@ -73,9 +66,7 @@
     }
 
     .modal_message {
-      //   width: 253px;
       margin-top: 1rem;
-
       font-weight: 400;
       font-family: "Open Sans";
       font-size: 0.875rem;
@@ -100,11 +91,8 @@
       bottom: 0;
       border-radius: 0px 0px 1.75rem 1.75rem;
       justify-content: space-between;
-      /* gap: 4rem; */
       background-color: #f0f6f8;
       width: 100%;
-      /* justify-content: space-evenly; */
-      /* margin: 1rem; */
       padding: 0.4rem 2.5rem;
       height: 3.75rem;
 
