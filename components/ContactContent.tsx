@@ -9,7 +9,11 @@ const ContactContent = (props: ContactInfo) => {
     <div className={styles.contact_cont_container}>
       {/* <ContactUSMessageImage /> */}
       <Image
-        src={props.contactIcon}
+        src={
+          props.contactIcon === "images/contactUsCallIcon.svg"
+            ? ContactUsCallImage
+            : ContactUSMessageImage
+        }
         alt="Contact us Image"
         width={52}
         height={40}
