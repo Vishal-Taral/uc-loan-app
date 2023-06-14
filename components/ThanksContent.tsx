@@ -28,8 +28,8 @@ const ThanksContent = ({ contactUsData }: ThanksContentProps) => {
             <Image
               src={
                 contactInfo.contactIcon === "images/contactUsCallIcon.svg"
-                  ? ContactUsCallImage
-                  : ContactUSMessageImage
+                  ? ContactUSMessageImage
+                  : ContactUsCallImage
               }
               width={52}
               height={40}

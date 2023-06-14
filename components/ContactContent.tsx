@@ -10,8 +10,8 @@ const ContactContent = (props: ContactInfo) => {
       <Image
         src={
           props.contactIcon === "images/contactUsCallIcon.svg"
-            ? ContactUsCallImage
-            : ContactUSMessageImage
+            ? ContactUSMessageImage
+            : ContactUsCallImage
         }
         alt="Contact us Image"
         width={52}

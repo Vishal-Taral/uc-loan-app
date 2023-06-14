@@ -94,16 +94,32 @@
         }
     }
 
-    .powered_by {
-        display: flex;
-        justify-content: center;
+    .lending_partner {
+        border: 1px solid #EAF0F6;
+        border-radius: 1.1rem;
+        padding: 1.5rem;
         margin-top: 2rem;
 
-        .powered_by_title {
+        .powered_by {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            .powered_by_title {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+        }
+
+        .description {
             font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 1.5rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            line-height: 2.143rem;
+            margin-top: 1rem;
+            color: #000000;
         }
     }
 }

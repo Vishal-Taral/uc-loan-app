@@ -27,7 +27,7 @@ const Home = () => {
         {
           id: 1,
           contactIcon: "images/contactUsCallIcon.svg",
-          contactSource: "For Enquiries,write to us at",
+          contactSource: "For Enquiries, write to as at",
           contactAt: "loan@udchalo.com",
         },
         {

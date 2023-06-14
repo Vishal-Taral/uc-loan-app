@@ -95,15 +95,28 @@ const LoanAdvantage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.powered_by}>
-          <h1 className={styles.powered_by_title}>Powered by : </h1>
-          <Image
-            src={poweredByImage}
-            width={150}
-            height={30}
-            alt="poweredByImage"
-            priority
-          />
+        <div className={styles.lending_partner}>
+          <div className={styles.powered_by}>
+            <h1 className={styles.powered_by_title}>Lending Partner : </h1>
+            <Image
+              src={poweredByImage}
+              width={150}
+              height={30}
+              alt="poweredByImage"
+              priority
+            />
+          </div>
+          <p className={styles.description}>
+            udChalo is the Distributor for loan products offered by the Lender.
+            Approval and eligibility criteria apply to the loan products and
+            services. Borrowers must understand and fulfil their repayment
+            obligations. Failure to repay loans may lead to additional fees,
+            penalties, and negative effects on credit scores. The interest
+            rates, repayment terms, and loan amounts mentioned are indicative
+            and may vary based on individual circumstances and creditworthiness.
+            Please review the policy for detailed information on data
+            collection, usage, and protection.
+          </p>
         </div>
       </div>
     </>
