@@ -11,7 +11,6 @@ const ThanksModal = ({ onClose, children }: any) => {
     <div className={styles.modal_container}>
       <div className={styles.modal_content}>
         <div className={styles.close_btn} onClick={onClose}>
-          {/* <CloseIcon /> */}
           <Image src={CloseIcon} alt="CloseIcon" />
         </div>
         {children}

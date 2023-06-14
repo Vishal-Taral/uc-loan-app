@@ -3,7 +3,7 @@ import LoanPageBanner from "@/components/LoanPageBanner";
 import ContactBanner from "@/components/ContactBanner";
 import LoanAdvantage from "@/components/LoanAdvantage";
 import { useEffect, useState } from "react";
-import { getLoanPageData } from "@/constants/api_service";
+// import { getLoanPageData } from "@/constants/api_service";
 import { LoanPageData } from "@/models";
 import UcHeader from "@/components/UcHeader";
 

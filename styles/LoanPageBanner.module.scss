@@ -4,10 +4,6 @@
   overflow: hidden;
   height: auto;
 
-  @media only screen and (max-width: 1197px) {
-    // height: 110vh;
-  }
-
   @media screen and (max-width: 480px) {
     height: 120vh;
   }
@@ -15,14 +11,7 @@
   .loanBanner {
     display: flex;
     justify-content: flex-end;
-    // justify-content: space-between;
-    // padding: 1rem 5.5rem;
     padding: 1rem 5% 1rem 14%;
-
-    // @media only screen and (max-width : 600px) {
-    //   padding-left: 2%;
-    //   width: 28rem;
-    // }
 
     .loanTexts {
       width: 50%;
@@ -32,9 +21,6 @@
 
 
       @media only screen and (max-width : 1358px) {
-        // position: absolute;
-        // left: 1rem;
-        // top: 10%;
         width: 40rem;
       }
 
@@ -50,22 +36,10 @@
         font-family: "Poppins";
         font-weight: 300;
         font-size: 3vmax;
-        // font-size: 3.2rem;
-
-        // max-width: 633px;
-        // margin: 1.5rem;
 
         @media only screen and (max-width : 600px) {
           font-size: 2.8vmax;
         }
-
-        // @media only screen and (max-width : 700px) {
-        //   font-size: 1.6rem;
-        // }
-
-        // @media only screen and (max-width : 1000px) {
-        //   font-size: 2rem;
-        // }
 
         .headerHighlight {
           color: #4885e0;
@@ -79,14 +53,11 @@
         font-size: 1.3vmax;
         line-height: 1.875vmax;
         font-weight: 500;
-        // max-width: 25rem;
         width: fit-content;
         padding: 6px 0.8rem;
         border-radius: 4px;
 
         @media only screen and (max-width : 600px) {
-          // max-width: 15rem;
-          // width: fit-content;
           font-size: 1.7vmax;
         }
 
@@ -109,8 +80,6 @@
 
       @media only screen and (max-width : 600px) {
         width: 60%;
-        // position: absolute;
-        // right: -3rem;
       }
 
       @media only screen and (max-width : 480px) {
@@ -134,26 +103,17 @@
     height: auto;
     left: 50%;
     transform: translate(-50%);
-    // top: 20.5rem;
     bottom: 17rem;
     background-color: white;
     padding: 1rem;
     border-radius: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
 
-    // margin: 0% auto;
-    // justify-content: center;
     @media only screen and (max-width: 1380px) {
-      // min-height: 14rem;
       bottom: 7vh;
     }
 
-    // @media only screen and (max-width: 607px) {
-    //   min-height: 21rem;
-    // }
-
     @media only screen and (max-width : 481px) {
-      // top: 4rem;
       position: absolute;
       bottom: 5%;
       width: 100%;
@@ -168,7 +128,7 @@
       line-height: 30px;
       margin-left: 1.5rem;
 
-      @media only screen and (max-width: 800px) {
+      @media only screen and (max-width: 902px) {
         text-align: center;
       }
     }
@@ -180,7 +140,6 @@
       grid-gap: 1rem;
       width: 100%;
       grid-gap: 1rem;
-      // margin: 0% auto;
       justify-content: center;
 
       @media only screen and (max-width:600px) {
@@ -200,14 +159,11 @@
       }
 
       .inp {
-        // position: absolute;
-        //   display: flex;
-        //   flex-direction: column;
         border: 1px solid #c5d4e3;
         border-radius: 10px;
         font-weight: 400;
         padding: 10px 15px;
-        width: 100%;
+        width: 18.2rem;
 
         @media only screen and (max-width: 600px) {
           width: 100%;
@@ -224,7 +180,6 @@
     .note_container {
       display: flex;
       gap: 1rem;
-      /* padding: 1rem 0rem; */
       margin-inline: 1.5rem;
       border: 1px solid #cddffb;
       background: #f3f7ff;
@@ -247,14 +202,12 @@
 
     .submitBtn {
       display: flex;
-      /* flex-direction: column; */
       justify-content: center;
       align-items: center;
       padding: 0px 9rem;
       height: 3rem;
       position: relative;
       left: 50%;
-      /* bottom: -31%; */
       transform: translate(-50%, 80%);
       background: #32996a;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -266,7 +219,6 @@
       line-height: 26px;
       color: white;
       margin-top: -2rem;
-      // text-transform: capitalize;
 
       @media only screen and (max-width: 1197px) {
         bottom: -21%;

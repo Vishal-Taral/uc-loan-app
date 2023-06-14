@@ -1,10 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import ThanksIcon from "../public/Images/thankYouIcon.svg";
-
 import ContactUsCallImage from "../public/Images/contactUsCallIcon.svg";
 import ContactUSMessageImage from "../public/Images/contactUsMessageIcon.svg";
-import ContactContent from "./ContactContent";
 import { ContactInfo } from "@/models";
 import styles from "../styles/ThanksModal.module.scss";
 
@@ -26,16 +24,7 @@ const ThanksContent = ({ contactUsData }: ThanksContentProps) => {
       <button className={styles.modal_btn}>Continue</button>
       <div className={styles.modal_contact_container}>
         {contactUsData?.map((contactInfo: ContactInfo) => (
-          //   <div key={contactInfo.id}>
-          //     <ContactContent
-          //       id={contactInfo.id}
-          //       contactIcon={contactInfo.contactIcon}
-          //       contactAt={contactInfo.contactAt}
-          //       contactSource={contactInfo.contactSource}
-          //     />
-          //   </div>
           <div key={contactInfo.id} className={styles.modal_contact}>
-            {/* <ContactUsCallImage /> */}
             <Image
               src={
                 contactInfo.contactIcon === "images/contactUsCallIcon.svg"
@@ -61,24 +50,3 @@ const ThanksContent = ({ contactUsData }: ThanksContentProps) => {
 };
 
 export default ThanksContent;
-
-// {contactUsData.map((contactInfo: ContactInfo) => (
-//     <div key={contactInfo.id}>
-//       <ContactContent
-//         id={contactInfo.id}
-//         contactIcon={contactInfo.contactIcon}
-//         contactAt={contactInfo.contactAt}
-//         contactSource={contactInfo.contactSource}
-//       />
-//     </div>
-//   ))}
-
-//  <div className={styles.modal_contact}>
-//          <ContactUSMessageImage />
-//           <Image src={ContactUSMessageImage} alt="ContactUSMessageImage" />
-
-//           <div className={styles.contact_text_container}>
-//             <h2 className={styles.contact_text}>You can also call us on</h2>
-//             <h2 className={styles.contact}>+91 9272203030</h2>
-//           </div>
-//         </div>
