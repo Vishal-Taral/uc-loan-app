@@ -151,13 +151,14 @@
 .container {
   background-color: rgba(229, 237, 244, 0.3);
   position: relative;
+  overflow: hidden;
 
-  @media only screen and (max-width : 1197px) {
+  @media only screen and (max-width : 1397px) {
     height: 110vh;
   }
 
   @media screen and (max-width : 600px) {
-    height: 135vh;
+    height: 100vh;
   }
 
 
@@ -168,23 +169,45 @@
     // padding: 1rem 5.5rem;
     padding: 1rem 5% 1rem 14%;
 
+    // @media only screen and (max-width : 600px) {
+    //   padding-left: 2%;
+    //   width: 28rem;
+    // }
+
     .loanTexts {
       width: 50%;
       height: 50%;
       z-index: 1;
       min-height: 20%;
 
+      @media only screen and (max-width : 600px) {
+        position: absolute;
+        left: 1rem;
+        // top: 10%;
+        width: 18rem;
+      }
+
       .header {
         color: #454545;
         font-family: "Poppins";
         font-weight: 300;
-        font-size: 3.2rem;
+        font-size: 3vmax;
+        // font-size: 3.2rem;
 
         // max-width: 633px;
         // margin: 1.5rem;
-        @media only screen and (max-width : 700px) {
-          font-size: 1.6rem;
+
+        @media only screen and (max-width : 600px) {
+          font-size: 2.8vmax;
         }
+
+        // @media only screen and (max-width : 700px) {
+        //   font-size: 1.6rem;
+        // }
+
+        // @media only screen and (max-width : 1000px) {
+        //   font-size: 2rem;
+        // }
 
         .headerHighlight {
           color: #4885e0;
@@ -196,24 +219,47 @@
       .subHeader {
         background-color: #f6a974;
         color: white;
-        font-size: 1.5rem;
-        line-height: 1.875rem;
+        font-size: 1.3vmax;
+        line-height: 1.875vmax;
         font-weight: 500;
         max-width: 25rem;
         padding: 6px 0.8rem;
         border-radius: 4px;
+
+        @media only screen and (max-width : 600px) {
+          max-width: 15rem;
+          font-size: 1.7vmax;
+        }
+
       }
 
       .timeLine {
         font-weight: 500;
-        font-size: 0.875rem;
+        font-size: 1vmax;
         color: #000000;
         line-height: 1.875rem;
         margin-top: 0.5rem;
+
+        @media only screen and (max-width:600px) {
+          font-size: 2vmax;
+        }
       }
     }
 
     .banner_image {
+
+      @media only screen and (max-width : 600px) {
+        width: 60%;
+        // position: absolute;
+        // right: -3rem;
+      }
+
+      @media only screen and (max-width : 480px) {
+        width: 80%;
+        position: absolute;
+        right: -7rem;
+      }
+
       .man_image {
         width: 100%;
         height: auto;
@@ -283,9 +329,16 @@
       min-height: 14rem;
     }
 
-    @media only screen and (max-width: 607px) {
+    @media only screen and (max-width: 600px) {
+      // min-height: 21rem;
+      width: 100%;
       min-height: 21rem;
+      top: 10%;
     }
+
+    // @media only screen and (max-width : 480px) {
+    // }
+
 
     .header {
       font-family: "Open Sans";
@@ -317,7 +370,7 @@
       // margin: 0% auto;
       justify-content: center;
 
-      @media only screen and (max-width:607px) {
+      @media only screen and (max-width:600px) {
         grid-template-columns: 100%;
       }
 
@@ -343,7 +396,7 @@
         padding: 10px 15px;
         width: 18rem;
 
-        @media only screen and (max-width: 607px) {
+        @media only screen and (max-width: 600px) {
           width: 100%;
         }
       }
@@ -399,7 +452,7 @@
         padding: 0 6rem;
       }
 
-      @media only screen and (max-width: 607px) {
+      @media only screen and (max-width: 600px) {
         bottom: -14%;
         padding: 0 6rem;
       }
