@@ -1,7 +1,8 @@
 import styles from "../styles/LoanPageBanner.module.scss";
 import RouteNavigation from "./RouteNavigation";
 import { useState, forwardRef, useEffect } from "react";
-import LoanBannerImage from "../public/Images/loanBannerImage.svg";
+import noteIcon from "../public/images/noteIcon.svg";
+import LoanBannerImage from "../public/images/loanBannerImage.svg";
 import { UseFormRegister, useForm } from "react-hook-form";
 import Image from "next/image";
 import ThanksModal from "./ThanksModal";
@@ -113,79 +114,90 @@ export function LoanPageBanner({ bannerData, contactUsData }: LoanBannerProps) {
       </div>
       <div className={styles.loanFormContainer}>
         <h2 className={styles.header}>Apply Now</h2>
-        <form className={styles.loanForm} onSubmit={handleSubmit(onsubmit)}>
-          <div>
-            <input
-              className={styles.inp}
-              type="text"
-              placeholder="Name"
-              {...register("name", {
-                required: {
-                  value: true,
-                  message: "Name is required",
-                },
-                pattern: {
-                  value: /^[A-Za-z ]+$/,
-                  message: "Invalid name format",
-                },
-              })}
-            />
-            {errors.name && (
-              <p className={styles.error}>{errors?.name?.message}</p>
-            )}
+        <form onSubmit={handleSubmit(onsubmit)}>
+          <div className={styles.loanForm}>
+            <div>
+              <input
+                className={styles.inp}
+                type="text"
+                placeholder="Name"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is required",
+                  },
+                  pattern: {
+                    value: /^[A-Za-z ]+$/,
+                    message: "Invalid name format",
+                  },
+                })}
+              />
+              {errors.name && (
+                <p className={styles.error}>{errors?.name?.message}</p>
+              )}
+            </div>
+            <div>
+              <input
+                className={`${styles.inp_btn}, ${styles.inp}`}
+                type="text"
+                min={10}
+                placeholder="Phone Number"
+                onKeyDown={(e) => handleKeyDown(e)}
+                maxLength={10}
+                {...register("phone", {
+                  required: {
+                    value: true,
+                    message: "Phone number is required",
+                  },
+                  pattern: {
+                    value: /^(?:\+?91)?[6-9]\d{9}$/,
+                    message: "Invalid mobile number format",
+                  },
+                })}
+              />
+              {errors?.phone && (
+                <p className={styles.error}>{errors?.phone?.message}</p>
+              )}
+            </div>
+            <div>
+              <input
+                className={styles.inp}
+                type="email"
+                placeholder="Email ID (Optional)"
+                {...register("email", {
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email format",
+                  },
+                })}
+              />
+              {errors.email && (
+                <p className={styles.error}>{errors?.email?.message}</p>
+              )}
+            </div>
+            <div>
+              <span className={styles.inp_box_heading}>City</span>
+              <Select
+                {...register("city", {
+                  required: {
+                    value: true,
+                    message: "City is required",
+                  },
+                })}
+              />
+              {errors.city && (
+                <p className={styles.error}>{errors?.city?.message}</p>
+              )}
+            </div>
           </div>
-          <div>
-            <input
-              className={`${styles.inp_btn}, ${styles.inp}`}
-              type="text"
-              min={10}
-              placeholder="Phone Number"
-              onKeyDown={(e) => handleKeyDown(e)}
-              maxLength={10}
-              {...register("phone", {
-                required: {
-                  value: true,
-                  message: "Phone number is required",
-                },
-                pattern: {
-                  value: /^(?:\+?91)?[6-9]\d{9}$/,
-                  message: "Invalid mobile number format",
-                },
-              })}
-            />
-            {errors?.phone && (
-              <p className={styles.error}>{errors?.phone?.message}</p>
-            )}
-          </div>
-          <div>
-            <input
-              className={styles.inp}
-              type="email"
-              placeholder="Email ID (Optional)"
-              {...register("email", {
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Invalid email format",
-                },
-              })}
-            />
-            {errors.email && (
-              <p className={styles.error}>{errors?.email?.message}</p>
-            )}
-          </div>
-          <div>
-            <span className={styles.inp_box_heading}>City</span>
-            <Select
-              {...register("city", {
-                required: {
-                  value: true,
-                  message: "City is required",
-                },
-              })}
-            />
-            {errors.city && (
-              <p className={styles.error}>{errors?.city?.message}</p>
-            )}
+          <div className={styles.note_container}>
+            <Image src={noteIcon} alt="noteIcon" />
+            <p className={styles.note}>
+              <span className={styles.note_title}>Note :</span> The information,
+              as required above, is shared for the purpose of processing and
+              verifying my loan application and I hereby confirm my consent for
+              sharing the same.
+            </p>
           </div>
           <button className={styles.submitBtn}>Submit</button>
         </form>

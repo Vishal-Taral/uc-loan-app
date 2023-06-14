@@ -37,7 +37,11 @@ const ThanksContent = ({ contactUsData }: ThanksContentProps) => {
           <div key={contactInfo.id} className={styles.modal_contact}>
             {/* <ContactUsCallImage /> */}
             <Image
-              src={contactInfo.contactIcon}
+              src={
+                contactInfo.contactIcon === "images/contactUsCallIcon.svg"
+                  ? ContactUsCallImage
+                  : ContactUSMessageImage
+              }
               width={52}
               height={40}
               alt="ContactUsCallImage"
